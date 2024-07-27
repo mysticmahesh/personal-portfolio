@@ -1,0 +1,30 @@
+{% extends "basic.html" %}
+{% block title %} Project_update {% endblock title %}
+
+{% block body %} 
+{% load static %}
+<div class="container-fluid mt-4">
+    <div class=" card col-md-6 mx-auto shadow-lg">
+        <div class="card-body">
+            <h2>Update project</h2>
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.as_p }}
+            <div class="row">
+                <div class="col">
+                  <a href="{% url 'projects_url' %}" class="btn btn-primary form-control">Back to Images</a>
+                </div>
+                 <div class="col">
+                   <input type="submit" value="update" name="" class="btn btn-success form-control">
+                 </div>
+              </div>
+            </form>
+        </div>
+      </div>
+
+
+<div class="container mt-5">
+    
+</div>
+
+{% endblock body %}
